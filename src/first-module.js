@@ -1,6 +1,6 @@
 let counter = 0
 
-const inc = () => counter++
+export const inc = () => counter++
 
 console.log('Counter initialized value is ', counter)
 
