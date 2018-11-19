@@ -1,16 +1,31 @@
-import counterInIndexJS, { inc as incFromFirstModule } from './first-module'
+import {inc, dec, getCounter} from './counter'
 
+const incBtn = document.createElement('button')
+const decBtn = document.createElement('button')
 
-//when using export default we can name imported value as we want
+incBtn.innerHTML = 'PLUS'
+decBtn.innerHTML = 'MINUS'
 
-// we can change name of named import using as 
+incBtn.addEventListener(
+    'click',
+    () => {
+        inc()
+        console.log(getCounter())
+    }
+)
 
-const declaredVariable = 'Ala ma kota'
+decBtn.addEventListener(
+    'click',
+    () => {
+        dec()
+        console.log(getCounter())
+    }
+)
 
-console.log(declaredVariable)
+document.body.appendChild(incBtn)
+document.body.appendChild(decBtn)
 
-console.log(this)
-
-console.log(counterInIndexJS)
-
-console.log(incFromFirstModule)
+// we want to import counter from module named counter
+// and attach functions from module to buttons
+// and display in console actual value of counter
+// when it changes
