@@ -1,4 +1,4 @@
-import './first-module'
+import counter from './first-module'
 
 const declaredVariable = 'Ala ma kota'
 
